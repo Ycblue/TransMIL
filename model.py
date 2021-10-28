@@ -1,4 +1,3 @@
-import pytorch_lightning as pl
 import torch
 import torch.nn as nn
 from argparse import ArgumentParser
@@ -10,7 +9,7 @@ from torch.optim.optimizer import Optimizer
 
 ## Lookahead optimizer + CE Loss
 
-class TransMIL(pl.LightningModule):
+class TransMIL(nn.Module):
     def __init__(self, n_classes, n_channels=3):
         super(TransMIL, self).__init__()
         self.L = 512 # 512 node fully connected layer
